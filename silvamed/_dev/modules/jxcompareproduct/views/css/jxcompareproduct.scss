@@ -1,0 +1,237 @@
+.compare-button.selected {
+  i:before {
+    content: "\ec34";
+  }
+}
+
+#compare-footer {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $gray-300;
+  color: $black;
+  padding: 30px;
+  z-index: 100;
+  &.visible-compare-footer {
+    transform: translateY(-100%);
+    .compare-footer-grover i:before {
+      content: '\ec35';
+    }
+  }
+  .compare-footer-grover {
+    width: 3.57143rem;
+    height: 3.57143rem;
+    color: $black;
+    background: $gray-300;
+    z-index: 5;
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(-80px);
+    display: block;
+    margin-left: -30px;
+    transition: all 0.3s ease-in-out;
+    i {
+      font-size: 20px;
+      line-height: 50px;
+    }
+    span {
+      vertical-align: 10px;
+    }
+    @include hover-focus-active {
+      color: $brand-primary;
+    }
+  }
+  #compare-list-footer {
+    display: flex;
+    overflow-y: auto;
+    li:not(.no-products) {
+      width: 85px;
+      min-width: 85px;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .buttons {
+    a {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: $letter-spacing-1;
+      margin-right: 20px;
+    }
+  }
+}
+
+#modal-compare {
+  z-index: 1060;
+  + .modal-backdrop {
+    opacity: 1 !important;
+    z-index: 1050;
+  }
+  &:not(.with-products) {
+    #compare-products, #compare-features {
+      display: none;
+      margin: 0 50%;
+    }
+  }
+  &.with-products {
+    .close {
+      right: -21px;
+      top: -16px;
+      font-size: 14px;
+      line-height: 1;
+      color: $white;
+
+      @include hover-focus-active {
+        color: $brand-primary;
+      }
+    }
+    .modal-dialog {
+      display: flex;
+      justify-content: center;
+    }
+    .modal-content {
+      background: none;
+      border: 20px solid $gray-900;
+      border-left: none;
+      width: auto;
+      max-width: 100%;
+      .modal-content-compare {
+        border-right: 1px solid $border-color;
+        padding-left: 20px;
+        overflow-x: auto;
+        background: $gray-900;
+        #compare-products {
+          background: white;
+          display: flex;
+          > div {
+            min-width: 200px;
+            max-width: 200px;
+            text-align: center;
+            background: white;
+            border-left: 1px solid $border-color;
+            border-top: 1px solid $border-color;
+            &:first-child {
+              background: none;
+              border: none;
+              transition: all .2s;
+              transition-timing-function: cubic-bezier(0.2, 0, 0.065, 0.25);
+              > div {
+                min-width: 200px;
+                transition: all .2s;
+                transition-timing-function: cubic-bezier(0.2, 0, 0.065, 0.25);
+              }
+            }
+            @include media-breakpoint-down(sm) {
+              min-width: 150px;
+              max-width: 150px;
+              &:first-child {
+                > div {
+                  min-width: 200px;
+                }
+              }
+            }
+          }
+          &.close-titles > div:first-child {
+            min-width: 0;
+            max-width: 100%;
+            > div {
+              margin-left: -200px;
+            }
+          }
+        }
+        #compare-features {
+          position: relative;
+          text-transform: uppercase;
+          font-size: 11px;
+          .features-toggle {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: $gray-900;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            transition: all .2s;
+            transition-timing-function: cubic-bezier(0.2, 0, 0.065, 0.25);
+            @include hover-focus-active {
+              color: $brand-primary;
+            }
+            span {
+              letter-spacing: 0.8em;
+              writing-mode: vertical-rl;
+              text-orientation: upright;
+            }
+            i {
+              font-size: 16px;
+              transition: all 0.3s ease;
+            }
+          }
+          .compare-features-title {
+            transition: all .2s;
+            transition-timing-function: cubic-bezier(0.2, 0, 0.065, 0.25);
+          }
+          &.close-titles {
+            .features-toggle {
+              color: white;
+              i {
+                transform: rotate(180deg);
+              }
+            }
+            .compare-features-row .compare-features-title {
+              margin-left: -200px;
+              color: $gray-200;
+              @include media-breakpoint-down(sm) {
+                margin-left: -150px;
+              }
+            }
+          }
+          .compare-features-row {
+            display: flex;
+            &:nth-child(even) .compare-features-item {
+              background: $gray-200;
+            }
+            &:nth-child(odd) .compare-features-item {
+              background: white;
+            }
+            &:last-child {
+              > div:not(:first-child) {
+                border-bottom: 1px solid $border-color;
+              }
+            }
+            > div {
+              min-width: 200px;
+              max-width: 200px;
+              padding: 10px;
+              text-align: center;
+              border-left: 1px solid $border-color;
+              &:first-child {
+                text-align: left;
+                background: $gray-200;
+                border: none;
+                padding-left: 30px;
+                color: $black;
+                font-size: 12px;
+              }
+              @include media-breakpoint-down(sm) {
+                min-width: 150px;
+                max-width: 150px;
+                padding: 9px 5px 8px;
+                &:first-child {
+                  padding-left: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

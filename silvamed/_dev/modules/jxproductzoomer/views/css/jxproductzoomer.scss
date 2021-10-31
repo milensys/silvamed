@@ -1,0 +1,16 @@
+#views_block-1 {
+  margin-top: 10px;
+}
+
+#image-block .span_link {
+  z-index: 1000;
+}
+
+.zoomLens {
+  max-width: 100%;
+}
+
+body > * .zoomContainer {
+  left: 0 !important;
+  top: 0 !important;
+}

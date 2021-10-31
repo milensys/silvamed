@@ -1,0 +1,260 @@
+@import "variables_color";
+@import "~bootstrap/scss/mixins";
+@import "mixins";
+
+//global
+$body-color: $black;
+$footer-bg: $white;
+$body-bg: $footer-bg;
+$main-bg: $white;
+$header-bg: $white;
+$body-bg: white;
+$font-family-base: 'Montserrat', sans-serif;
+$font-awesome: 'FontAwesome';
+$font-linearicons: 'Linearicons';
+$enable-caret: false;
+$enable-rounded: false;
+$enable-shadows: false;
+
+//main colors
+$brand-primary: $mountain-mist;
+$brand-primary-lighten: lighten(saturate(adjust_hue($brand-primary, 18.303571428571455), 11.1111111111111%), 18.4313725490196%);;
+$brand-secondary: $gray-61;
+$brand-success: $green-1;
+$brand-info: $blue-1;
+$brand-warning: $orange-1;
+$brand-danger: $red-1;
+$border-color: rgba($black, .2);
+$table-border-color: $border-color;
+$new-color: $gray-61;
+$discount-color: $brand-primary;
+
+//Links
+$link-color: $gray-600;
+$link-hover-color: $gray-800;
+$link-hover-decoration: none;
+
+//font size
+$font-size-lg: 1.25rem;
+$font-size-sm: 0.875rem;
+$font-weight-base: 400;
+$line-height-base: 1.643;
+$h1-font-size: 2.857rem;
+$h2-font-size: 1.857rem;
+$h3-font-size: 1.429rem;
+$h4-font-size: 1.429rem;
+$h5-font-size: 1rem;
+$h6-font-size: 1rem;
+$headings-margin-bottom: 1em;
+$headings-font-weight: 600;
+$headings-line-height: 1.4;
+$headings-color: $black;
+$product-price-font: 500 18px/20px $font-family-base;
+$product-regular-price-font: 300 13px/20px $font-family-base;
+$product-discount-percentage: $product-price-font;
+
+//letter spacing
+$letter-spacing: 0.3em;
+$letter-spacing-1: 0.2em;
+$letter-spacing-xs: 0.15em;
+
+//breadcrumb
+$breadcrumb-bg: $brand-primary-lighten;
+$breadcrumb-padding-x: 0;
+$breadcrumb-padding-y: 1.714rem;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-border-radius: 0;
+$breadcrumb-divider: "\ec3c";
+$breadcrumb-divider-color: $black;
+$breadcrumb-item-padding: 1.357rem;
+
+//buttons
+$btn-font-weight: 400;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-active-box-shadow: none;
+
+//forms
+$input-bg: transparent;
+$input-btn-border-width: 1px;
+$input-font-family: $font-family-base;
+$input-border-color: rgba($black, .2);
+$input-color: $gray-61;
+$input-placeholder-color: $gray-61;
+$input-group-btn-border-color: initial;
+$input-disabled-bg: $gray-300;
+$input-box-shadow: none;
+$input-focus-color: $gray-61;
+$input-focus-border-color: $black;
+
+$input-font-weight: 300;
+$input-line-height: 1.23;
+$input-padding-x: 1.429rem;
+$input-padding-y: 1.143rem;
+$input-height: 3.571rem;
+
+$input-btn-line-height: 2.857;
+$input-btn-padding-y: 0;
+$input-btn-padding-x: 2.143rem;
+
+$input-font-size-sm: 0.929rem;
+$input-line-height-sm: 1.143;
+$input-padding-y-sm: 0.786rem;
+$input-padding-x-sm:  1.429rem;
+$input-height-sm: 2.857rem;
+
+$input-font-size-lg: 0.929rem;
+$input-padding-x-lg: 1.429rem;
+$input-line-height-lg: 1.143;
+$input-padding-y-lg: 1.571rem;
+$input-height-lg:  4.429rem;
+
+$form-group-margin-bottom: 1.071rem!important;
+
+// Textual addons
+$input-group-addon-color: $black;
+$input-group-addon-bg: transparent;
+$input-group-addon-border-color: $border-color;
+
+//custom forms
+$custom-control-gutter: 2rem;
+$custom-control-spacer-x: 1.357rem;
+$custom-control-indicator-size: 1rem;
+$custom-control-indicator-bg: $white;
+$custom-control-indicator-checked-disabled-bg: $gray-100;
+$custom-control-indicator-box-shadow: inset 0px 0px 0px 1px rgba($black,1);
+$custom-checkbox-indicator-indeterminate-box-shadow: inset 0px 0px 0px 1px rgba($brand-primary,1);
+$custom-control-indicator-border-color: $black;
+$custom-control-indicator-disabled-bg: $gray-100;
+$custom-control-description-disabled-color: $gray-200;
+$custom-control-indicator-checked-bg: $white;
+$custom-control-indicator-checked-border-color: $black;
+$custom-control-indicator-focus-box-shadow: inset 0px 0px 0px 1px rgba($black,1);
+$custom-control-indicator-active-box-shadow: $custom-control-indicator-focus-box-shadow;
+$custom-control-indicator-active-bg: $white;
+$custom-control-indicator-active-border-color: $black;
+$custom-radio-indicator-icon-checked: none;
+$custom-select-bg: transparent;
+$custom-select-font-weight: 300;
+$custom-select-font-size: 0.929rem;
+$custom-select-line-height: 1.23;
+$custom-select-height: 3rem;
+$custom-select-padding-y:0.857rem;
+$custom-select-padding-x:1.143rem;
+$custom-select-color: $black;
+$custom-select-border-color: rgba($black, .2);
+$custom-select-border-radius: 0;
+$custom-select-focus-border-color: $black;
+$custom-select-box-shadow: none;
+$custom-select-indicator: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im0xMjEuMywzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44LDBsLTUxLDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44LDAtMS42LDEuNi0xLjYsNC4yIDAsNS44bDUzLjksNTMuOWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDUzLjktNTMuOWMxLjctMS42IDEuNy00LjIgMC4xLTUuOHoiIGZpbGw9IiMwMDAwMDAiLz4KICA8L2c+Cjwvc3ZnPgo=");
+$custom-checkbox-indicator-icon-checked: none;
+$custom-select-disabled-color: $custom-select-color;
+$custom-select-disabled-bg: $gray-300;
+
+//modals
+$modal-lg: 960px;
+$modal-md: 800px;
+$modal-sm: 568px;
+$modal-header-padding: 1.875rem;
+$modal-inner-padding: 1.875rem;
+$modal-content-border-width: 0;
+$modal-content-box-shadow-sm-up: 0 5px 43px rgba(0, 0, 0, 0.11);
+$modal-content-box-shadow-xs: 0 5px 43px rgba(0, 0, 0, 0.11);
+$modal-content-border-radius: 0;
+$modal-backdrop-opacity: 0.8;
+
+//dropdowns
+$dropdown-min-width: 200px;
+$dropdown-spacer: 1rem;
+$dropdown-border-width: 1px;
+$dropdown-border-color: $black;
+$dropdown-bg: white;
+$dropdown-box-shadow: 0 5px 43px rgba($black, 0.11);
+$enable-shadows: true;
+$dropdown-item-padding-y: 10px;
+$dropdown-item-padding-x: 15px;
+$dropdown-link-hover-color: $gray-600;
+$dropdown-link-hover-bg: transparent;
+$dropdown-link-active-color: $brand-primary;
+$dropdown-link-active-bg: transparent;
+
+//card
+$card-bg: $white;
+$card-border-color: $border-color;
+$card-cap-bg: $brand-primary-lighten;
+
+//Close
+$close-color: $gray-61;
+$close-font-size: 1.143rem;
+$close-font-weight: 400;
+$close-text-shadow: none;
+
+//Spacing
+$spacer: 30px;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 2),
+    6: ($spacer * 2.5),
+    7: ($spacer * 3),
+    8: ($spacer * 3.5),
+    9: ($spacer * 4),
+    10: ($spacer * 4.5),
+    11: ($spacer * 10)
+  ),
+  $spacers
+);
+
+//grid example
+$grid-columns: 12;
+$grid-gutter-width: $spacer;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+        xs: 0,
+  // Extra small screen / phone
+        xsm: 400px,
+  // Small screen / phone
+        sm: 576px,
+  // Medium screen / tablet
+        md: 768px,
+  // Large screen / desktop
+        lg: 992px,
+  // Extra large screen / wide desktop
+        xl: 1200px,
+  // Extra large screen / wide desktop
+        xxl: 1780px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 746px,
+  lg: 966px,
+  xl: 1170px,
+  xxl: 1810px
+);
+
+$hr-border-color: $border-color;
+
+  // Alerts
+  //
+  // Define alert colors, border radius, and padding.
+
+$alert-padding-y:                   1rem;
+$alert-padding-x:                   4.28571rem;
+$alert-margin-bottom:               2.143rem;
+
+$alert-bg-level:                    -11;
+$alert-border-level:                -11;
+$alert-color-level:                 0;
+
+//popover
+$popover-bg: white;
+$popover-header-bg: $brand-primary;
+$popover-header-color: white;
+$popover-arrow-color: $brand-primary;

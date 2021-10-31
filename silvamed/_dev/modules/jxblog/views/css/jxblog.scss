@@ -1,0 +1,85 @@
+/**
+ * 2017-2020 Zemez
+ *
+ * JX Blog
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the General Public License (GPL 2.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/GPL-2.0
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the module to newer
+ * versions in the future.
+ *
+ *  @author    Zemez (Alexander Grosul)
+ *  @copyright 2017-2020 Zemez
+ *  @license   http://opensource.org/licenses/GPL-2.0 General Public License (GPL 2.0)
+ */
+
+.post-meta {
+  > div {
+    font: 300 13px/16px $font-family-base;
+    color: $black;
+    em {
+      font-style: normal;
+    }
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.bp-name, .bc-name {
+  font: 500 24px/34px $font-family-base;
+}
+
+.blog-post-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.blog-post-name {
+  font: 300 34px/40px $font-family-base;
+  @include media-breakpoint-up(xl) {
+    font-size: 40px;
+  }
+}
+
+.post-description {
+  p {
+    strong {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-xs;
+    }
+  }
+  blockquote {
+    padding: 15px 20px 5px;
+    margin: 0 0 20px;
+    border-left: 2px solid $brand-primary;
+    p {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+  }
+}
+
+.post-tags {
+  display: flex;
+  align-items: center;
+  h5 {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-xs;
+  }
+  a {
+    font: 400 14px/16px $font-family-base;
+    letter-spacing: $letter-spacing-xs;
+    + a {
+      margin-left: 10px;
+    }
+  }
+}

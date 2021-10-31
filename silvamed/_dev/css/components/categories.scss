@@ -1,0 +1,361 @@
+/**
+ * Styles category description block
+ * Use on "listing" page
+ */
+.block-category {
+  #category-description {
+    .category-description-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .btn {
+        order: 1;
+
+        &:not(.active) {
+          span:last-child {
+            display: none;
+          }
+
+          + .category-description-short + .category-description-full {
+            display: none;
+          }
+        }
+
+        &.active {
+          span:first-child {
+            display: none;
+          }
+
+          + .category-description-short {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Styles for subcategories block
+ * Use on "listing" page
+ */
+#subcategories {
+  .subcategories-items-inner {
+    border: solid 1px $border-color;
+    padding: 30px 15px;
+  }
+}
+
+/**
+ * Styles for top sort container
+ * Use on "listing" page
+ */
+.products-selection {
+  #grid-list-buttons {
+    white-space: nowrap;
+
+    li {
+      margin-right: 10px;
+      display: inline-block;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: $black;
+
+        i {
+          font-size: 20px;
+          line-height: 1;
+        }
+
+        &.active, &:hover {
+          color: $brand-primary;
+        }
+
+        &.active {
+          pointer-events: none;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+.products-sort-order {
+  .custom-select {
+    width: 200px;
+  }
+}
+
+/**
+ * Styles for pagination
+ * Use on "listing" page
+ */
+.pagination {
+  li {
+    + li {
+      margin-left: 10px;
+    }
+  }
+
+  a {
+    padding: 2px;
+    min-width: 35px;
+    height: 35px;
+    text-align: center;
+    font: 300 13px/30px $font-family-base;
+    display: block;
+    color: $black;
+    background: $gray-100;
+    border: solid 1px $gray-100;
+    @include hover-focus-active {
+      background: $white;
+      border-color: $black;
+    }
+
+    &.disabled {
+      &.previous, &.next {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      min-width: 46px;
+      height: 46px;
+      line-height: 44px;
+    }
+  }
+
+  .current a {
+    background: $white;
+    border-color: $black;
+    font-weight: 700;
+  }
+
+}
+
+.showing {
+  font: 300 13px/16px $font-family-base;
+}
+
+/**
+ * Styles for filter module
+ * Use on "listing" page
+ */
+#search_filters_wrapper {
+  .facets-title {
+    font: 500 30px/32px $font-family-base;
+    margin-bottom: 40px;
+    color: $black;
+  }
+
+  section.facet {
+    margin-top: 10px;
+    @include media-breakpoint-up(md) {
+      &:not(:first-child) {
+        margin-top: 50px;
+      }
+    }
+
+    .facet-title {
+      font: 500 18px/24px $font-family-base;
+      color: $black;
+      margin-bottom: 20px;
+      @include media-breakpoint-up(xl) {
+        font-size: 24px;
+      }
+    }
+    .custom-control {
+      padding-left: 1.643rem;
+    }
+    .custom-control-label {
+      &:before, &:after {
+        cursor: pointer;
+        top: 0;
+        left: -23px;
+      }
+      .custom-control label & {
+        display: block;
+      }
+    }
+    .facet-list {
+      margin-bottom: 0;
+
+      li {
+        + li {
+          margin-top: 16px;
+        }
+
+        .custom-control-label {
+          display: block;
+        }
+
+        .color-box {
+          @extend .custom-control-label::before;
+          top: 0;
+          left: -23px;
+          border: none;
+          box-shadow: none;
+
+          &[style*='background-color:#ffffff'] {
+            border: 1px solid $border-color;
+          }
+        }
+
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font: 300 13px/15px $font-family-base;
+        }
+      }
+
+      #price-slider-label {
+        display: block;
+        margin: -10px -5px 21px;
+        color: $black;
+
+        strong {
+          margin-right: 10px;
+          font-weight: 400;
+          letter-spacing: 0.04em;
+        }
+
+        span {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.active_filters {
+  margin-bottom: 30px;
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 60px;
+  }
+
+  h5 {
+    font: 500 18px/24px $font-family-base;
+    color: $black;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(xl) {
+      font-size: 24px;
+    }
+  }
+
+  .active_filters_wrapper {
+    margin-bottom: 20px;
+
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      > li {
+        background: $brand-primary;
+        border-radius: 30px;
+        color: $white;
+        padding: 10px 40px 10px 20px;
+        font-size: 14px;
+        line-height: 1.14;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        margin: 0 5px 5px 0;
+        letter-spacing: $letter-spacing-1;
+
+        .js-search-link {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: $white;
+
+          i {
+            display: inline-block;
+            font-size: 12px;
+            line-height: 1;
+          }
+
+          @include hover-focus-active {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Styles for "Category tree links" module
+ */
+.block-categories {
+  a {
+    display: inline-block;
+  }
+
+  .arrows {
+    .arrow-right,
+    .arrow-down {
+      cursor: pointer;
+      margin-left: 5px;
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+
+    .arrow-down {
+      display: none;
+    }
+
+    &[aria-expanded="true"] {
+      .arrow-right {
+        display: none;
+      }
+
+      .arrow-down {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.theme-pink {
+  .back-bar {
+    height: 6px;
+    background-color: $gray-300;
+
+    .selected-bar {
+      background-color: $brand-primary;
+    }
+
+    .pointer {
+      width: 18px;
+      height: 18px;
+      top: -6px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background-color: $brand-primary;
+    }
+
+    .pointer-label {
+      display: none;
+    }
+
+    .focused {
+      color: $gray-600;
+    }
+  }
+
+  .scale {
+    display: none;
+  }
+}
+

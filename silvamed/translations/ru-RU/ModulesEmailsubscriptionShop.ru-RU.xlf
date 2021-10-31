@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="themes\PROD-23671\modules\ps_emailsubscription\views\templates\hook\ps_emailsubscription.tpl" source-language="ru-RU" target-language="ru-RU" datatype="plaintext">
+    <body>
+      <trans-unit id="2fd823320ca07c5505f0c334574d87fd">
+        <source>Subscribe to Newsletter</source>
+        <target>Подписаться на новостную рассылку</target>
+        <note>Context:
+File: themes\PROD-23671\modules\ps_emailsubscription\views\templates\hook\ps_emailsubscription.tpl:27</note>
+      </trans-unit>
+      <trans-unit id="625f93a63da35ee7150341160460f31e">
+        <source>Your e-mail</source>
+        <target>Ваш e-mail</target>
+        <note>Context:
+File: themes\PROD-23671\modules\ps_emailsubscription\views\templates\hook\ps_emailsubscription.tpl:44</note>
+      </trans-unit>
+      <trans-unit id="b26917587d98330d93f87808fc9d7267">
+        <source>Subscribe</source>
+        <target>Подписаться</target>
+        <note>Context:
+File: themes\PROD-23671\modules\ps_emailsubscription\views\templates\hook\ps_emailsubscription.tpl:51</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

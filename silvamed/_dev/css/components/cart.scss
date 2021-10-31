@@ -1,0 +1,182 @@
+.ps_shoppingcart {
+  > a {
+    color: $black;
+    font: 300 14px/16px $font-family-base;
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 24px;
+      line-height: 1;
+      margin-right: 4px;
+    }
+
+    .cart-products-label, .cart-products-count-text {
+      display: none;
+    }
+
+    @include hover-focus-active {
+      color: $brand-primary;
+    }
+  }
+
+
+  .dropdown-menu {
+    min-width: 320px;
+    padding: 30px;
+    @include media-breakpoint-up(md) {
+      min-width: 568px;
+      padding: 65px 65px 50px;
+    }
+  }
+}
+
+#cart-summary-product-list {
+  .cart-summary-product-item {
+    margin-bottom: 28px;
+    .product-thumbnail {
+      flex: 0 0 40%;
+      max-width: 140px;
+      margin-right: 19px;
+      img {
+        width: 100%;
+      }
+    }
+    .product-attributes {
+      > p {
+        font: 300 13px/15px $font-family-base;
+        color: $gray-61;
+      }
+    }
+    .close {
+      display: inline-block;
+      position: static;
+      float: none;
+      font: 500 13px/15px $font-family-base;
+      letter-spacing: $letter-spacing;
+      color: $black;
+      text-transform: uppercase;
+      @include hover-focus-active {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+.block-cart-body {
+  .cart-subtotals, .cart-total {
+    border-top: solid 1px $black;
+    padding-top: 25px;
+  }
+  .cart-total {
+    margin-top: 25px;
+  }
+}
+
+.cart-subtotals {
+  .label, .value {
+    font: 400 16px/22px $font-family-base;
+  }
+}
+
+.cart-total {
+  .label, .value {
+    font: 500 24px/26px $font-family-base;
+  }
+}
+
+/**
+ * Styles cart right block
+ * Use on "shopping cart" page
+ */
+.cart-container {
+  .product-price, *[class^="product-price-"], *[class*=" product-price-"], .product-title {
+    margin-bottom: 0;
+  }
+}
+
+.cart-summary {
+  .cart-summary-line {
+    text-transform: uppercase;
+    color: $black;
+    &.cart-total {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .label {
+      margin-right: 5px;
+    }
+    .value {
+      color: $brand-primary;
+    }
+  }
+}
+
+.cart-summary {
+  .promo-highlighted {
+    .label {
+      color: $black;
+
+      .code {
+        text-decoration: underline;
+        cursor: pointer;
+        color: $brand-primary;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Styles cart list
+ * Use on "shopping cart" page
+ */
+.product-line-grid {
+  .product-line-grid-body {
+    > .product-line-info {
+      > .label {
+        padding: 0;
+        line-height: inherit;
+        text-align: left;
+        white-space: inherit;
+      }
+      > .out-of-stock {
+        color: $brand-danger;
+      }
+      > .available {
+        color: $brand-success;
+      }
+    }
+  }
+
+  .product-line-grid-right {
+    .cart-line-product-actions,
+    .product-price {
+      color: $black;
+
+      .remove-from-cart {
+        color: $black;
+        display: inline-block;
+        margin-top: 0.3125rem;
+      }
+    }
+  }
+}
+
+/**
+ * Styles for "block reassurance" module
+ * Use on "shopping cart" page
+ */
+#block-reassurance {
+  text-align: right;
+  li .block-reassurance-item {
+    padding: 15px 0;
+  }
+  img {
+    width: 1.563rem;
+    margin-right: .625rem;
+  }
+}

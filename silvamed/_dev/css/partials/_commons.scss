@@ -1,0 +1,929 @@
+/**
+ * Styles for rtl-version.
+ */
+.lang-rtl {
+  * {
+    direction: rtl !important;
+  }
+
+  main {
+    text-align: right !important;
+  }
+}
+
+/**
+ * Main elements styles
+ */
+html {
+  min-height: 100vh;
+  font-size: 0.750rem;
+  @include media-breakpoint-up(lg) {
+    font-size: 0.813rem;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 0.875rem;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $body-bg;
+  color: $body-color;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: $main-bg;
+}
+
+a {
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  color: $black;
+
+  @include hover-focus-active {
+    color: $red-2;
+  }
+}
+
+.bg-primary-lighten {
+  background: $brand-primary-lighten;
+}
+
+.title-block {
+  font: 500 24px/26px $font-family-base;
+  @include media-breakpoint-up(md) {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+}
+
+.products-section-title {
+  font: 300 40px/44px $font-family-base;
+  text-transform: capitalize;
+}
+
+.subcategory-title {
+  font: 300 22px/26px $font-family-base;
+}
+
+.subcategory-name {
+  font: 500 18px/22px $font-family-base;
+}
+
+.subpage-title {
+  font: 500 18px/24px $font-family-base;
+  color: $black;
+  margin-bottom: 20px;
+  @include media-breakpoint-up(xl) {
+    font-size: 24px;
+  }
+}
+
+.link {
+  cursor: pointer;
+  &.link-primary {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $brand-primary;
+    span {
+      text-decoration: underline;
+    }
+    i {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+    &:hover {
+      color: $black;
+      span {
+        text-decoration: none;
+      }
+    }
+  }
+  &.link-dark {
+    color: $gray-900;
+    &:hover, &:focus {
+      color: $brand-primary;
+    }
+  }
+}
+
+button, .btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.23;
+  padding: 13px 30px;
+  letter-spacing: $letter-spacing-xs;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 0;
+  border: none;
+
+  &:active, &:focus {
+    outline: none;
+  }
+
+  &:disabled, &.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &.fa {
+    display: inline-block;
+    font-family: $font-awesome;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  @include media-breakpoint-up(md) {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+.btn-sm {
+  font-size: 12px;
+  line-height: 14px;
+  padding: 11px 13px;
+}
+
+.btn-md {
+  padding: 14px 30px;
+}
+
+.btn-lg {
+  padding: 22px 50px;
+}
+
+.btn-link {
+  text-transform: uppercase;
+  font: 500 13px/15px $font-family-base;
+  letter-spacing: $letter-spacing;
+  color: $black;
+  @include hover-focus-active {
+    color: $brand-primary;
+  }
+}
+
+.btn-default {
+  background: $brand-primary;
+  color: black;
+  border: solid 1px $brand-primary;
+
+  &:hover, &:active, &:focus {
+    background: $red-2;
+    color: black;
+    border: solid 1px $red-2;
+  }
+}
+
+.btn-primary {
+  background: $brand-primary;
+  color: black;
+  border: solid 1px $brand-primary;
+
+  @include hover-focus-active {
+    background: $red-2;
+    color: black;
+    border: solid 1px $red-2;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: rgba($brand-primary, .7);
+    background: rgba($white, .7);
+    border-color: rgba($brand-primary, .7);
+  }
+  &.disabled, &:disabled {
+    background: $brand-primary;
+    color: $white;
+    border: solid 1px $brand-primary;
+  }
+}
+
+.btn-secondary {
+  background: $gray-100;
+  color: $black;
+  border: solid 1px $gray-100;
+
+  @include hover-focus-active {
+    background: $black;
+    color: $white;
+    border-color: $black;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+
+  &.list-default > li {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.list-style-disk {
+    li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 5px;
+
+      a {
+        font: 300 13px/15px $font-family-base;
+      }
+
+      &:before {
+        content: '•';
+        font-size: 16px;
+        line-height: 1;
+        position: absolute;
+        top: 3px;
+        left: 1px;
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+/**
+ * Extends and overrides Bootstrap classes
+ * breadcrumb styles
+ */
+.breadcrumb {
+  position: relative;
+  z-index: 0;
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    background: $breadcrumb-bg;
+    top: 0;
+    bottom: 0;
+    width: 10000px;
+    z-index: -1;
+  }
+  &:before {
+    right: 99%;
+  }
+  &:after {
+    left: 99%;
+  }
+}
+
+.breadcrumb-item {
+  font: 300 13px/16px $font-family-base;
+  color: $black;
+  a {
+    color: $black;
+    @include hover-focus-active {
+      color: $brand-primary;
+    }
+  }
+  &::before {
+    font-size: 10px;
+    line-height: 1;
+    font-family: $font-linearicons;
+  }
+}
+
+/**
+ * Card style
+ */
+.card-header {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: $letter-spacing-1;
+}
+
+/**
+ * Disable margin in notifications lists
+ */
+#notifications, .alert, .help-block {
+  text-align: left;
+  &:empty {
+    display: none;
+  }
+  ul:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.alert {
+  padding-left: 60px;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.429rem;
+  &:before {
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    position: absolute;
+    top: 13px;
+    left: 22px;
+  }
+  &.alert-info:before {
+    content: '\f05a';
+  }
+  &.alert-warning:before {
+    content: '\f05a';
+  }
+  &.alert-danger:before {
+    content: '\f071';
+  }
+  &.alert-success:before {
+    content: '\f058';
+  }
+  &.alert-dismissible .close {
+    padding: 0;
+    top: 14px;
+    right: 15px;
+    i {
+      font-size: 15px;
+    }
+  }
+}
+
+/**
+ * Styles for errors in login/registration forms
+ */
+.has-error {
+  input,
+  select {
+    outline: 0.1875rem solid $red;
+  }
+  .help-block {
+    @extend .col-12, .col-sm-10, .offset-sm-2;
+    padding: 0;
+    margin-top: ($spacer * .5);
+    .alert {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/**
+ * Extends and overrides Bootstrap classes
+ * Use if you can't override it with a variable.
+ */
+// add opened accordion icon
+[data-toggle="collapse"] {
+  i {
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+  }
+  &[aria-expanded*='true'] {
+    i {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.toggle-wrapper {
+  i {
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+    font-size: 16px;
+    transform-origin: 50% 40%;
+  }
+
+  &[aria-expanded*='true'] i {
+    transform: rotate(180deg);
+  }
+}
+
+/**
+ * Extends and overrides Bootstrap classes
+ * dropdown.
+ */
+// dropdown custom close button
+.dropdown-menu .dropdown-close.close {
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 5;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  line-height: 1;
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+    line-height: 1;
+    top: 35px;
+    right: 40px;
+  }
+}
+
+.close {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+
+  &:not(:disabled):not(.disabled) {
+    opacity: 1;
+  }
+
+  @include hover-focus-active {
+    color: $black;
+  }
+}
+
+// duplicated '.active' styles for current dropdown item
+.dropdown-item {
+  &.current {
+    @extend .dropdown-item.active;
+  }
+}
+
+// override input style for chrome
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px $input-bg inset;
+  -webkit-text-fill-color: $body-color !important;
+}
+
+// hide element without !important
+.to-hide {
+  display: none;
+}
+
+// extend default 'bootstrap form' styles
+form {
+  &:not(#add-to-cart-or-refresh):not(#product-customization):not(.jxsearchform) {
+    max-width: 600px;
+  }
+}
+
+label {
+  color: $black;
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background: $gray-200;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  border: 4px solid $gray-200;
+  background: $gray-800;
+  border-radius: 100%;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  @include addLinearIcons('\ec34', 13px, 14px, color);
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  box-shadow: none;
+}
+
+.form-group {
+  margin-bottom: 30px;
+
+  &.form-check-radio {
+    margin-bottom: 23px;
+  }
+}
+
+.custom-select {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.custom-file-wrapper {
+  .custom-file {
+    height: auto;
+    .custom-file-input {
+      position: absolute;
+      height: 100%;
+      padding: 0;
+      z-index: 0;
+    }
+  }
+}
+
+// remove border radius from jquery.bootstrap-touchspin.css
+.bootstrap-touchspin .btn {
+  @if $enable-rounded != true {
+    border-radius: 0 !important;
+  }
+}
+
+/**
+ * Styles for product images container
+ * close button styles(in image section)
+ */
+.product-thumbnail {
+  display: block;
+  text-align: center;
+  position: relative;
+
+  a.product-thumbnail-link {
+    display: block;
+  }
+
+  .close-product {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    z-index: 1;
+    opacity: 1;
+    font-size: 14px;
+    line-height: 1;
+    color: $gray-61;
+    @include hover-focus-active {
+      color: $brand-primary;
+    }
+  }
+}
+
+/**
+ * Product flags styles
+ * Used on product badges 'new', 'sale', 'pack' etc.
+ */
+ul.product-flags {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  z-index: 1;
+
+  li {
+    padding: 2px 5px 0;
+    min-width: 35px;
+    color: black;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: $letter-spacing-xs;
+    text-transform: uppercase;
+    white-space: nowrap;
+    float: left;
+    clear: left;
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+    &.discount, &.label-daydeal, &.on-sale {
+      background: $sale;
+    }
+    &.new {
+      background: $brand-primary;
+    }
+    &.online-only {
+      background: $brand-info;
+    }
+    &.pack {
+      background: $brand-primary-lighten;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    li {
+      padding: 2px 6px 0 10px;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 25px;
+      letter-spacing: $letter-spacing;
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/**
+ * Product info styles
+ */
+.product-title {
+  font: 500 13px/15px $font-family-base;
+  color: $black;
+
+  a {
+    color: $black;
+    @include hover-focus-active {
+      color: $brand-primary;
+    }
+  }
+}
+
+.product-description-short {
+  font-size: $font-size-sm;
+  margin-bottom: 20px;
+}
+
+/**
+ * Category info styles
+ */
+.category-name {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1.1;
+  font-family: $font-family-base;
+  @include media-breakpoint-up(xl) {
+    font-size: 40px;
+  }
+}
+
+/**
+ * Styles for color or texture attributes
+ * used in 'faceted search' module, product miniatures block and product combinations(product page and quickview).
+ */
+.variant-links {
+  margin: 0 -7px 10px;
+  line-height: 0;
+
+  .variant-links-item {
+    margin: 0 7px 10px;
+    display: inline-block;
+
+    a, label {
+      display: block;
+      margin: 0;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 20px;
+      font-family: $font-family-base;
+      color: $black;
+      transition: 0.3s;
+
+      &:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 100%;
+        background: $black;
+        height: 1px;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+        opacity: 0;
+      }
+
+      &.color span, input {
+        display: none;
+      }
+
+      &.color {
+        width: 44px;
+        height: 44px;
+        border-radius: 100%;
+
+        &:after {
+          display: none;
+        }
+
+        &:before {
+          position: absolute;
+          @include addLinearIcons('\ec34', 13px, 44px, $black);
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          opacity: 0;
+          text-align: center;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &[style*='background-color: #ffffff'] {
+          box-shadow: inset 0 0 0 1px $border-color;
+        }
+      }
+    }
+
+    &.active, &:hover {
+      a, label {
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+
+        &.color {
+        }
+      }
+    }
+
+    &:hover {
+      a, label {
+        &.color {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    &.active {
+      a, label {
+        font-weight: 500;
+
+        &.color {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .js-count {
+    display: none;
+  }
+}
+
+/**
+ * Products prices styles
+ * Use "product-price", "product-price-lg", "product-price-sm" classes on container with prices.
+ */
+.product-price, *[class^="product-price-"], *[class*=" product-price-"] {
+  font-size: 18px;
+  line-height: 1.111;
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  .price {
+    order: 1;
+  }
+  .regular-price {
+    order: 2;
+  }
+  .discount-percentage, .discount-amount {
+    order: 3;
+  }
+  .tax-shipping-delivery-label {
+    order: 4;
+    margin-right: 5px;
+  }
+  .daydeal-box {
+    order: 5;
+    flex: 1 1 100%;
+  }
+  .unit-price-cart {
+    order: 5;
+  }
+  &.product-price-lg {
+    font-size: 40px;
+    .price {
+      font-size: 40px;
+      line-height: 1.111;
+      margin-right: 10px;
+    }
+    .regular-price, .discount-percentage, .discount-amount {
+      font-size: 24px;
+      line-height: 1.111;
+    }
+  }
+
+  &.product-price-sm {
+    font-size: 16px;
+    .price {
+      font-size: 16px;
+      line-height: 1.111;
+      margin-right: 5px;
+    }
+    .regular-price {
+      margin-right: 5px;
+    }
+    .discount-percentage, .discount-amount, .unit-price-cart {
+      font-size: 16px;
+      line-height: 1.111;
+    }
+  }
+
+  &.with-discount {
+    .price {
+      margin-right: 8px;
+
+    }
+
+    .regular-price {
+      margin-right: 8px;
+    }
+
+    &.product-price-lg {
+      .price, .regular-price, .discount-percentage, .discount-amount {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.price {
+  font: $product-price-font;
+  color: $black;
+}
+
+.regular-price {
+  text-decoration: line-through;
+  font: $product-regular-price-font;
+  color: $gray-61;
+}
+
+.discount-percentage, .discount-amount, .unit-price-cart {
+  font: $product-discount-percentage;
+  color: $brand-primary;
+}
+
+.tax-shipping-delivery-label {
+  font: $product-regular-price-font;
+  color: $gray-61;
+}
+
+/**
+ * Styles for to top button | plugin material-scrolltop(npm)
+ */
+.material-scrolltop {
+  display: block;
+  position: fixed;
+  z-index: 99;
+  width: 0;
+  height: 0;
+  bottom: 23px;
+  right: 23px;
+  padding: 0;
+  overflow: hidden;
+  letter-spacing: 0;
+  outline: none !important;
+  border: none;
+  box-shadow: 0 3px 10px rgba($brand-primary, 0.5);
+  cursor: pointer;
+  border-radius: 50%;
+  background: $brand-primary;
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+
+  &:hover {
+    background-color: darken($brand-primary, 10);
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba($brand-primary, 0.5), 0 3px 15px rgba($brand-primary, 0.5);
+  }
+
+  &.reveal {
+    width: 56px;
+    height: 56px;
+  }
+
+  i {
+    display: block;
+    font-size: 25px;
+    color: white;
+  }
+}
+
+.blockreassurance_product .item-product img.svg {
+  width: 25px;
+  height: 25px;
+}
+
+/**
+ * Styles for stick-up section
+ */
+#header .isStuck {
+  transition: 0.3s;
+  transform: translateY(0);
+  left: 0 !important;
+  width: 100% !important;
+  background: $header-bg;
+  border-bottom: solid 1px $black;
+  padding: 5px 15px;
+  &:not(:hover):not(.active) {
+    transform: translateY(-100%);
+  }
+}
+
+/**
+ * Styles for empty blocks, when you change content using a responsive.js
+ */
+div[id^="_mobile_"]:empty, div[class*="mobile_for_"]:empty {
+  display: none;
+}
+
+div[id^="_mobile_"]:not(:empty), div[class*="mobile_for_"]:not(:empty) {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
