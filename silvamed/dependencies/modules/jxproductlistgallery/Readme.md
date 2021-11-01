@@ -1,1 +1,0 @@
-# Jx Product List Gallery
